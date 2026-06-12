@@ -15,7 +15,7 @@ export const intro = {
 
 // --- Mensagem que aparece DEPOIS do clique no coração -------
 export const reveal = {
-  title: 'Você é minha razão de sorrir quando eu acordo\ne minha motivação de dormir pra sonhar com você.',
+  title: 'Você é minha razão de sorrir quando eu acordo\ne minha motivação de dormir pra poder sonhar com você.',
   paragraphs: [
     'Desde o dia em que você chegou, minha vida ficou mais feliz, mais leve, mais viva.',
     'Eu podia escrever um livro inteiro e ainda assim, não ia ser o suficiente para falar o quanto eu te amo.',
@@ -51,7 +51,7 @@ export const fotos = [
 ]
 
 // Intervalo (ms) de troca automática das fotos
-export const FOTO_INTERVALO = 4000
+export const FOTO_INTERVALO = 8000
 
 // --- Playlist de fundo --------------------------------------
 //  Arquivos em /public/  ->  referência como /nome.mp3
