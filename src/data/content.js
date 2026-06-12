@@ -5,23 +5,23 @@
 
 // --- Textos da tela inicial ---------------------------------
 export const intro = {
-  eyebrow: "I've been carrying this in my heart for so long...",
-  word: 'Love',
+  eyebrow: "Eu te amo desde o dia que eu te vi no republic, Clara",
+  word: 'Para sempre',
   subtitle:
-    'Every moment since you walked into my life,\nthe universe feels a little more magical.',
-  cta: "Click the heart when you're ready...",
-  hint: '(Some feelings are too precious to rush)',
+    'Cada vez que eu te vejo,\nMeu coração começa a bater diferente.',
+  cta: "",
+  hint: 'To com você para sempre, meu amor, minha gatinha, meu bom dia e minha boa noite.',
 }
 
 // --- Mensagem que aparece DEPOIS do clique no coração -------
 export const reveal = {
-  title: 'You are my favorite "good morning"\nand my hardest "goodnight".',
+  title: 'Você é minha razão de sorrir quando eu acordo"\ne minha motivação para dormir e sonhar com você.',
   paragraphs: [
-    'Desde o dia em que você chegou, tudo ficou mais leve, mais colorido, mais nosso.',
-    'Eu poderia reescrever o universo inteiro e, ainda assim, escolheria você em cada versão dele.',
-    'Obrigado por existir e por me deixar fazer parte da sua história.',
+    'Desde o dia em que você chegou, minha vida ficou mais feliz, mais leve, mais viva.',
+    'Eu podia escrever um livro inteiro e ainda assim, não ia ser o suficiente para falar o quanto eu te amo.',
+    'Eu to aqui por você hoje, ontem, amanhã e para sempre.',
   ],
-  signature: 'Para sempre seu(sua) ❤️',
+  signature: 'Para sempre todinho seu',
 }
 
 // --- Fotos do carrossel -------------------------------------
