@@ -63,7 +63,7 @@ export const FOTO_INTERVALO = 8000
 //  O fuso explícito é OBRIGATÓRIO: sem ele a data seria lida no fuso do
 //  celular de quem abre o site, e a contagem quebraria em outro fuso.
 export const DATA_PARTIDA = '2026-07-16T04:00:00-03:00'
-export const DATA_RETORNO = '2026-07-21T08:15:00-03:00'
+export const DATA_RETORNO = '2026-07-21T012:30:00-03:00'
 
 // Quantidade de cartas (uma por dia). Precisa bater com o tamanho de `cartas`.
 export const TOTAL_CARTAS = 5
