@@ -71,9 +71,9 @@ export const TOTAL_CARTAS = 5
 // --- Textos da seção de despedida ---------------------------
 export const despedida = {
   titulo: 'Volto em 5 dias, meu amor ❤️',
-  contadorAcima: 'Faltam apenas...',
-  contadorAbaixo: '...para eu poder te abraçar de novo ❤️',
-  contadorFim: 'Acabou a espera. Estou voltando para você. ❤️',
+  contadorAcima: 'Daqui a...',
+  contadorAbaixo: '...to te lambendo todinha ❤️',
+  contadorFim: 'To voltando meu amor. Daqui a pouco a gente ta juntinho❤️',
   cartasTitulo: 'Uma cartinha para cada dia ❤️',
   cartaEmBreve: 'Ainda não chegou a hora ❤️',
   cartaAberta: 'Toque para abrir',
