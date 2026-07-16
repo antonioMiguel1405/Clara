@@ -75,7 +75,7 @@ export const despedida = {
   contadorAbaixo: '...to te lambendo todinha ❤️',
   contadorFim: 'To voltando meu amor. Daqui a pouco a gente ta juntinho❤️',
   cartasTitulo: 'Uma cartinha para cada dia ❤️',
-  cartaEmBreve: 'Ainda não chegou a hora ❤️',
+  cartaEmBreve: 'Espera mais um pouquinho gatinha 🫶🏻',
   cartaAberta: 'Toque para abrir',
 }
 
