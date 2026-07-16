@@ -5,7 +5,7 @@
 
 // --- Textos da tela inicial ---------------------------------
 export const intro = {
-  eyebrow: "Eu te amo desde o republic, Clara",
+  eyebrow: "Eu te amo desde que eu te vi, Clara",
   word: 'Isso é só um pouco do que eu sinto por você',
   subtitle:
     'Cada vez que eu te vejo,\nMeu coração começa a bater diferente.',
