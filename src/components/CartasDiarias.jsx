@@ -25,7 +25,7 @@ export function msDesbloqueio(dia) {
 // (48h, 72h]... -> o Math.ceil devolve 2, 3, ... e o plural "dias" nunca erra.
 function textoBloqueio(restanteMs) {
   if (restanteMs <= DIA_MS) return despedida.cartaEmBreve
-  return `Disponível em ${Math.ceil(restanteMs / DIA_MS)} dias`
+  return `Gatinha, espera só mais ${Math.ceil(restanteMs / DIA_MS)} dias`
 }
 
 export default function CartasDiarias({ agora }) {
