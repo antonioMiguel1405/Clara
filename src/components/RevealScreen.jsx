@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Divider from './Divider.jsx'
 import PhotoGallery from './PhotoGallery.jsx'
 import MusicPlayer from './MusicPlayer.jsx'
+import SecaoDespedida from './SecaoDespedida.jsx'
 import { reveal } from '../data/content.js'
 
 const container = {
@@ -50,6 +51,10 @@ export default function RevealScreen() {
       >
         {reveal.signature}
       </motion.p>
+
+      <motion.div variants={item} className="w-full">
+        <SecaoDespedida />
+      </motion.div>
 
       <motion.div variants={item} className="mb-16">
         <Divider />

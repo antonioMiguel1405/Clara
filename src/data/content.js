@@ -5,7 +5,7 @@
 
 // --- Textos da tela inicial ---------------------------------
 export const intro = {
-  eyebrow: "Eu te amo desde o dia que eu te vi, Clara",
+  eyebrow: "Eu te amo desde o republic, Clara",
   word: 'Isso é só um pouco do que eu sinto por você',
   subtitle:
     'Cada vez que eu te vejo,\nMeu coração começa a bater diferente.',
@@ -52,6 +52,43 @@ export const fotos = [
 
 // Intervalo (ms) de troca automática das fotos
 export const FOTO_INTERVALO = 8000
+
+// ============================================================
+//  DESPEDIDA TEMPORÁRIA — datas da viagem
+//  Para uma próxima viagem, troque SÓ estas duas linhas. 💕
+// ============================================================
+//  Formato: ISO 8601 COM o fuso escrito no fim ('-03:00' = Brasília).
+//  'AAAA-MM-DDTHH:MM:00-03:00'
+//
+//  O fuso explícito é OBRIGATÓRIO: sem ele a data seria lida no fuso do
+//  celular de quem abre o site, e a contagem quebraria em outro fuso.
+export const DATA_PARTIDA = '2026-07-16T08:15:00-03:00'
+export const DATA_RETORNO = '2026-07-21T12:30:00-03:00'
+
+// Quantidade de cartas (uma por dia). Precisa bater com o tamanho de `cartas`.
+export const TOTAL_CARTAS = 5
+
+// --- Textos da seção de despedida ---------------------------
+export const despedida = {
+  titulo: 'Volto em 5 dias, meu amor ❤️',
+  contadorAcima: 'Faltam apenas...',
+  contadorAbaixo: '...para eu poder te abraçar de novo ❤️',
+  contadorFim: 'Acabou a espera. Estou voltando para você. ❤️',
+  cartasTitulo: 'Uma cartinha para cada dia ❤️',
+  cartaEmBreve: 'Ainda não chegou a hora ❤️',
+  cartaAberta: 'Toque para abrir',
+}
+
+// --- As cartinhas (uma liberada por dia) --------------------
+//  A carta do Dia N abre em DATA_PARTIDA + (N-1) x 24h.
+//  Troque os textos abaixo à vontade — nenhum componente precisa ser tocado.
+export const cartas = [
+  { dia: 1, texto: 'To com medo da quantidade de saudade que eu vou sentir nessa viagem, meu amor...' },
+  { dia: 2, texto: 'Queria do fundo do meu coração que vc tivesse aqui comigo, to com saudades ja e contando os dias pra te ver denovo.' },
+  { dia: 3, texto: 'Queria te apresentar todo mundo aqui. Sei que todos vão gostar de vc. Morrendo de saudades' },
+  { dia: 4, texto: 'Acabando a viagem meu amor, morrendo de vontade de te ver...' },
+  { dia: 5, texto: 'Daqui a pouco a gente ta juntinho, vou chegar ai e te dar um beijo na hora que eu te ver. Ansioso...' },
+]
 
 // --- Playlist de fundo --------------------------------------
 //  Arquivos em /public/  ->  referência como /nome.mp3
