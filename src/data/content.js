@@ -86,7 +86,7 @@ export const cartas = [
   { dia: 1, texto: 'To com medo da quantidade de saudade que eu vou sentir nessa viagem, meu amor...' },
   { dia: 2, texto: 'Queria do fundo do meu coração que vc tivesse aqui comigo, to com saudades ja e contando os dias pra te ver denovo.' },
   { dia: 3, texto: 'Queria te apresentar todo mundo aqui. Sei que todos vão gostar de vc. Morrendo de saudades' },
-  { dia: 4, texto: 'Acabando a viagem meu amor, morrendo de vontade de te ver...' },
+  { dia: 4, texto: 'Acabando a viagem meu amor, so mais 2 dias e a gente ta juntinho, morrendo de vontade de te ver... contando as horas' },
   { dia: 5, texto: 'Daqui a pouco a gente ta juntinho, vou chegar ai e te dar um beijo na hora que eu te ver. Ansioso...' },
 ]
 
