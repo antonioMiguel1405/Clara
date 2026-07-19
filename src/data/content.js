@@ -87,7 +87,7 @@ export const cartas = [
   { dia: 2, texto: 'Queria do fundo do meu coração que vc tivesse aqui comigo, to com saudades ja e contando os dias pra te ver denovo.' },
   { dia: 3, texto: 'Queria te apresentar todo mundo aqui. Sei que todos vão gostar de vc. Morrendo de saudades' },
   { dia: 4, texto: 'Acabando a viagem meu amor, so mais 2 dias e a gente ta juntinho, morrendo de vontade de te ver... contando as horas' },
-  { dia: 5, texto: 'Daqui a pouco a gente ta juntinho, vou chegar ai e te dar um beijo na hora que eu te ver. Ansioso...' },
+  { dia: 5, texto: 'Daqui a pouco a gente ta juntinho amor, vou chegar ai e te dar um beijo na hora que eu te ver. Ansioso p te ver, te beijar, te cheirar, te levar pra sair. Ansioso pra estar com você😘🫶🏻.' },
 ]
 
 // --- Playlist de fundo --------------------------------------
