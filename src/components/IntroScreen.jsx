@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { Heart } from 'lucide-react'
+import { Gamepad2, Heart } from 'lucide-react'
 import Divider from './Divider.jsx'
 import ContadorNamoro from './ContadorNamoro.jsx'
 import FotoSurpresa from './FotoSurpresa.jsx'
-import { intro } from '../data/content.js'
+import { botaoClaro } from './botoes.js'
+import { intro, jogo } from '../data/content.js'
 
 const container = {
   hidden: { opacity: 0 },
@@ -18,7 +19,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
-export default function IntroScreen({ onReveal }) {
+export default function IntroScreen({ onReveal, onJogar }) {
   return (
     <motion.section
       variants={container}
@@ -70,6 +71,17 @@ export default function IntroScreen({ onReveal }) {
           fill="#FF6FA0"
           strokeWidth={1.5}
         />
+      </motion.button>
+
+      <motion.button
+        variants={item}
+        onClick={onJogar}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.95 }}
+        className={botaoClaro}
+      >
+        <Gamepad2 size={20} />
+        {jogo.botaoIntro}
       </motion.button>
 
       <motion.div variants={item} className="space-y-1">

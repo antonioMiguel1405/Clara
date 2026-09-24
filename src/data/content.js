@@ -133,3 +133,40 @@ export const playlist = [
   { titulo: 'Maria do Olho Verde', artista: 'WIU', src: '/musica-3-maria-olho-verde.mp3' },
   { titulo: 'França', artista: '💕', src: '/musica-4.mp3' },
 ]
+
+// --- Minijogo "Uma mensagem surpresa" -----------------------
+//  Mimos = coletáveis (pegar 36 vence) · Estudos = obstáculos.
+//  Ajustes de dificuldade ficam em src/jogo/constantes.js.
+export const jogo = {
+  botaoIntro: 'Uma mensagem surpresa',
+  titulo: 'Uma mensagem surpresa',
+  frase: 'pegue os mimos para ganhar, evite os estudos!',
+  mimos: 'Mimos',
+  estudos: 'Estudos',
+  meta: 'Pegue 36 mimos',
+  vidasInfo: 'Você tem 3 vidas',
+  vidas: 'vidas',
+  perdeuVida: '-1 vida',
+  quase: 'quase!',
+  controlesTeclado: 'Use ← → ou A / D para andar',
+  controlesToque: 'Arraste o dedo para os lados para andar',
+  comecar: 'Começar',
+  inicio: 'Início',
+  recorde: 'Recorde',
+  melhorTempo: 'Melhor tempo',
+  pausado: 'Pausado',
+  continuar: 'Continuar',
+  gameOver: 'Você precisa de um beijo',
+  vocePegouAntes: 'Você pegou',
+  vocePegouDepois: 'mimos',
+  novoRecorde: 'Novo recorde! ❤️',
+  jogarDeNovo: 'Jogar de novo',
+  vitoria: 'Você conseguiu! ❤️',
+
+  // Tela que abre ao pegar os 36 mimos
+  final: {
+    titulo: '[mensagem final a definir]',
+    texto: '[texto da mensagem final a definir]',
+    voltar: 'Início',
+  },
+}
