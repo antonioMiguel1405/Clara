@@ -28,6 +28,10 @@ export default function IntroScreen({ onReveal }) {
       className="relative z-10 flex min-h-[100dvh] w-full flex-col items-center justify-center gap-7 px-6 py-12 text-center"
     >
       <motion.div variants={item}>
+        <ContadorNamoro />
+      </motion.div>
+
+      <motion.div variants={item}>
         <Divider />
       </motion.div>
 
@@ -71,10 +75,6 @@ export default function IntroScreen({ onReveal }) {
       <motion.div variants={item} className="space-y-1">
         <p className="font-hand text-xl text-rosa-mid">{intro.cta}</p>
         <p className="font-hand text-base text-rosa-mid/70">{intro.hint}</p>
-      </motion.div>
-
-      <motion.div variants={item}>
-        <ContadorNamoro />
       </motion.div>
 
       <motion.div variants={item}>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import { fotoSurpresa } from '../data/content.js'
 
-const DOBRA = { duration: 0.75, ease: [0.45, 0, 0.2, 1] }
+const DOBRA = { duration: 0.375, ease: [0.45, 0, 0.2, 1] }
 
 // Papel do lado de fora da carta: linhas de caderno bem clarinhas.
 const papel = {
@@ -113,8 +113,8 @@ export default function FolhaFoto({ src, animar, onAberta }) {
           initial={animar ? { top: '33.33%', bottom: '33.33%' } : false}
           animate={{ top: '0%', bottom: '0%' }}
           transition={{
-            top: { ...DOBRA, delay: animar ? 0.75 : 0 },
-            bottom: { ...DOBRA, delay: animar ? 1.35 : 0 },
+            top: { ...DOBRA, delay: animar ? 0.375 : 0 },
+            bottom: { ...DOBRA, delay: animar ? 0.675 : 0 },
           }}
           className="absolute inset-x-0 rounded-xl bg-white shadow-2xl shadow-rosa-deep/30"
         />
@@ -129,7 +129,7 @@ export default function FolhaFoto({ src, animar, onAberta }) {
           variants={{ dobrada: { rotateX: 180, z: 1 }, aberta: { rotateX: 0, z: 0 } }}
           initial={inicial}
           animate="aberta"
-          transition={{ ...DOBRA, delay: animar ? 1.35 : 0 }}
+          transition={{ ...DOBRA, delay: animar ? 0.675 : 0 }}
           onAnimationComplete={() => animar && onAberta?.()}
           className="absolute inset-x-0 top-2/3 h-1/3 origin-top [transform-style:preserve-3d]"
         >
@@ -142,7 +142,7 @@ export default function FolhaFoto({ src, animar, onAberta }) {
           variants={{ dobrada: { rotateX: -180, z: 2 }, aberta: { rotateX: 0, z: 0 } }}
           initial={inicial}
           animate="aberta"
-          transition={{ ...DOBRA, delay: animar ? 0.75 : 0 }}
+          transition={{ ...DOBRA, delay: animar ? 0.375 : 0 }}
           className="absolute inset-x-0 top-0 h-1/3 origin-bottom [transform-style:preserve-3d]"
         >
           <FaixaDaFoto src={src} faixa={0} className="rounded-t-xl" />
