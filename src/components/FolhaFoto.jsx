@@ -153,10 +153,6 @@ export default function FolhaFoto({ src, animar, onAberta }) {
             <span className="font-hand text-lg leading-none text-rosa-deep/90">{fotoSurpresa.verso}</span>
           </Verso>
         </motion.div>
-
-        {/* Marquinhas das dobras, que ficam no papel depois de aberto */}
-        <div className="pointer-events-none absolute inset-x-0 top-1/3 h-px bg-black/10" />
-        <div className="pointer-events-none absolute inset-x-0 top-2/3 h-px bg-black/10" />
       </div>
     </motion.div>
   )
