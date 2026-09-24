@@ -13,6 +13,40 @@ export const intro = {
   hint: 'To com você para sempre, meu amor, minha gatinha, meu bom dia e minha boa noite.',
 }
 
+// --- Contador de dias juntos (tela inicial) -----------------
+//  Mesmo formato das datas da viagem: fuso '-03:00' obrigatório.
+export const DATA_INICIO_NAMORO = '2026-02-20T00:00:00-03:00'
+
+export const contadorNamoro = {
+  acima: 'Juntos há',
+  abaixo: 'e contando, pra sempre ❤️',
+  desde: 'desde 20 de fevereiro de 2026',
+}
+
+// --- Foto surpresa (botão da tela inicial) ------------------
+//  As fotos saem da pasta src/fotos-surpresa/ — é só colocar ou tirar
+//  arquivos .jpg/.jpeg/.png/.webp de lá, sem mexer em código nenhum.
+//  Cuidado para não colocar a mesma foto duas vezes com nomes diferentes.
+export const fotosSurpresa = Object.values(
+  import.meta.glob('../fotos-surpresa/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  }),
+)
+
+export const fotoSurpresa = {
+  botao: 'Abrir uma foto nossa',
+  verso: 'pra você, meu amor',
+  outra: 'Outra foto',
+  voltar: 'Início',
+  voltarRolo: 'Voltar ao rolo',
+  rolo: 'Nosso rolo',
+  roloTitulo: 'Nosso rolo ❤️',
+  acabou: 'Você já abriu todas as nossas fotos... por enquanto ❤️',
+  vazio: 'Ainda não tem fotos aqui ❤️',
+}
+
 // --- Mensagem que aparece DEPOIS do clique no coração -------
 export const reveal = {
   title: 'Você é minha razão de sorrir quando eu acordo\ne minha motivação de dormir pra poder sonhar com você.',

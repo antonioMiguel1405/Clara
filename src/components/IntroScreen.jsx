@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import Divider from './Divider.jsx'
+import ContadorNamoro from './ContadorNamoro.jsx'
+import FotoSurpresa from './FotoSurpresa.jsx'
 import { intro } from '../data/content.js'
 
 const container = {
@@ -69,6 +71,14 @@ export default function IntroScreen({ onReveal }) {
       <motion.div variants={item} className="space-y-1">
         <p className="font-hand text-xl text-rosa-mid">{intro.cta}</p>
         <p className="font-hand text-base text-rosa-mid/70">{intro.hint}</p>
+      </motion.div>
+
+      <motion.div variants={item}>
+        <ContadorNamoro />
+      </motion.div>
+
+      <motion.div variants={item}>
+        <FotoSurpresa />
       </motion.div>
 
       <motion.div variants={item} className="mt-2">
