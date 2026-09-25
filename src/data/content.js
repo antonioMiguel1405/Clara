@@ -182,7 +182,9 @@ export const recompensa = {
   titulo: 'Feliz aniversário, meu amor💕',
   //  Vídeo em /public/  ->  referência como '/nome.mp4'. Vazio = aviso "em breve".
   video: '/recompensa/video.mp4',
-  capa: '/recompensa/capa.jpg', // imagem mostrada antes de dar play
+  // Tamanho original do vídeo (px), usado só para a proporção do player
+  videoLargura: 528,
+  videoAltura: 850,
   videoEmBreve: 'O vídeo vai aparecer aqui 🎬',
   mensagem:
     'Clara, feliz aniversário, estou gravando esse vídeo só para tentar falar o quanto eu tenho orgulho de você.  Eu sei que não consigo em palavras, então decidi tentar em libras. Desde o nosso primeiro date eu sou apaixonado por você, você é a razão do meu acordar e o meu pensamento antes do dormir. Quero que esse seja o primeiro de infinitos aniversários juntos.  Eu te amo',

@@ -7,6 +7,11 @@ import { fotosRecompensa, recompensa } from '../data/content.js'
 
 const COLUNAS = 4
 
+// Pixel transparente no lugar de capa: com o fundo preto do player, antes
+// do play fica tudo preto em qualquer navegador (sem isso, alguns mostram o 1º quadro)
+const TELA_PRETA =
+  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
@@ -83,7 +88,8 @@ export default function TelaRecompensa({ onInicio }) {
         animate="show"
         className="relative flex min-h-[100dvh] w-full items-center justify-center px-4 py-10"
       >
-        <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[32px] bg-white/85 px-5 py-8 text-center shadow-2xl shadow-rosa-mid/40 ring-1 ring-white backdrop-blur-md sm:px-8">
+        {/* translúcido: as fotos do fundo aparecem por trás do cartão */}
+        <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[32px] bg-white/60 px-5 py-8 text-center shadow-2xl shadow-rosa-mid/40 ring-1 ring-white/80 backdrop-blur-[3px] sm:px-8">
           <motion.div variants={item}>
             <Divider />
           </motion.div>
@@ -97,16 +103,24 @@ export default function TelaRecompensa({ onInicio }) {
 
           <motion.div variants={item} className="w-full">
             {recompensa.video ? (
-              // Tamanho segue a proporção do próprio vídeo (vertical ou horizontal),
-              // sem faixas pretas, limitado à altura da tela
-              <video
-                src={recompensa.video}
-                poster={recompensa.capa || undefined}
-                controls
-                playsInline
-                preload="metadata"
-                className="mx-auto block h-auto max-h-[70dvh] w-auto max-w-full rounded-2xl bg-black shadow-lg shadow-rosa-mid/30"
-              />
+              // Caixa com a proporção do vídeo, limitada à largura do cartão e a
+              // 70% da altura da tela — não muda de tamanho quando começa a tocar
+              <div
+                className="mx-auto overflow-hidden rounded-2xl bg-black shadow-lg shadow-rosa-mid/30"
+                style={{
+                  aspectRatio: `${recompensa.videoLargura} / ${recompensa.videoAltura}`,
+                  width: `min(100%, calc(70dvh * ${recompensa.videoLargura} / ${recompensa.videoAltura}))`,
+                }}
+              >
+                <video
+                  src={recompensa.video}
+                  poster={TELA_PRETA}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="block h-full w-full bg-black object-contain"
+                />
+              </div>
             ) : (
               <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-2xl bg-rosa-soft/80 text-rosa-deep ring-1 ring-rosa-mid/30">
                 <Clapperboard size={36} strokeWidth={1.5} />
