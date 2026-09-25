@@ -7,6 +7,11 @@ import { fotosRecompensa, recompensa } from '../data/content.js'
 
 const COLUNAS = 4
 
+// Contorno branco em volta das letras: o texto fica legível em cima das
+// fotos sem precisar borrar nem esconder o fundo
+const CONTORNO_BRANCO =
+  '0 0 2px #fff, 0 0 3px #fff, 0 0 6px #fff, 0 0 10px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.8)'
+
 // Pixel transparente no lugar de capa: com o fundo preto do player, antes
 // do play fica tudo preto em qualquer navegador (sem isso, alguns mostram o 1º quadro)
 const TELA_PRETA =
@@ -61,7 +66,7 @@ function MosaicoFundo() {
         })}
       </div>
       {/* véu rosado para o texto ficar legível por cima das fotos */}
-      <div className="absolute inset-0 bg-gradient-to-b from-rosa-bg/55 via-rosa-bg/35 to-rosa-bg/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-rosa-bg/35 via-rosa-bg/20 to-rosa-bg/40" />
     </div>
   )
 }
@@ -88,15 +93,15 @@ export default function TelaRecompensa({ onInicio }) {
         animate="show"
         className="relative flex min-h-[100dvh] w-full items-center justify-center px-4 py-10"
       >
-        {/* translúcido: as fotos do fundo aparecem por trás do cartão */}
-        <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[32px] bg-white/60 px-5 py-8 text-center shadow-2xl shadow-rosa-mid/40 ring-1 ring-white/80 backdrop-blur-[3px] sm:px-8">
+        {/* translúcido e sem desfoque: as fotos do fundo aparecem nítidas por trás */}
+        <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[32px] bg-white/35 px-5 py-8 text-center shadow-2xl shadow-rosa-mid/40 ring-1 ring-white/80 sm:px-8">
           <motion.div variants={item}>
             <Divider />
           </motion.div>
 
           <motion.h2
             variants={item}
-            className="text-gradient font-serif text-3xl font-bold leading-tight sm:text-4xl"
+            className="text-gradient font-serif text-3xl font-bold leading-tight drop-shadow-[0_0_3px_#fff] sm:text-4xl"
           >
             {recompensa.titulo}
           </motion.h2>
@@ -131,7 +136,8 @@ export default function TelaRecompensa({ onInicio }) {
 
           <motion.p
             variants={item}
-            className="max-w-md whitespace-pre-line font-hand text-xl leading-snug text-rosa-deep/90 sm:text-2xl"
+            className="max-w-md whitespace-pre-line font-hand text-xl font-bold leading-snug text-[#D6246E] sm:text-2xl"
+            style={{ textShadow: CONTORNO_BRANCO }}
           >
             {recompensa.mensagem}
           </motion.p>
