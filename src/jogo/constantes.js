@@ -9,7 +9,7 @@ export const LARGURA = 400
 export const ALTURA = 700
 
 // Mimos necessários para vencer
-export const META_MIMOS = 36
+export const META_MIMOS = 22
 
 // Vidas por partida e quanto tempo ela fica piscando (atravessando
 // estudos) depois de levar um golpe
@@ -75,9 +75,9 @@ export const DIFICULDADE = {
   tempoMax: 150, // em quantos segundos o tempo sozinho chega na sua parte máxima
   pesoTempo: 0.5,
   pesoMimos: 0.5,
-  // Reta final: um empurrão extra, suave, entre esses mimos
-  retaFinalInicio: 28,
-  retaFinalFim: 34,
+  // Reta final: um empurrão extra, suave, entre essas frações da meta
+  retaFinalInicio: 0.78,
+  retaFinalFim: 0.94,
   retaFinalBonus: 0.15,
   teto: 1,
   suavizacao: 1.2, // quão rápido a dificuldade atual persegue a desejada (1/s)

@@ -27,7 +27,7 @@ export function calcularDificuldade(tempo, mimos) {
   const D = DIFICULDADE
   const porTempo = Math.min(1, tempo / D.tempoMax)
   const porMimos = Math.min(1, mimos / META_MIMOS)
-  const k = clamp((mimos - D.retaFinalInicio) / (D.retaFinalFim - D.retaFinalInicio), 0, 1)
+  const k = clamp((porMimos - D.retaFinalInicio) / (D.retaFinalFim - D.retaFinalInicio), 0, 1)
   const retaFinal = k * k * (3 - 2 * k) * D.retaFinalBonus
   return Math.min(D.teto, D.pesoTempo * porTempo + D.pesoMimos * porMimos + retaFinal)
 }
