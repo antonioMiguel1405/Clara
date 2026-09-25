@@ -4,11 +4,11 @@ import FloatingHearts from './components/FloatingHearts.jsx'
 import IntroScreen from './components/IntroScreen.jsx'
 import RevealScreen from './components/RevealScreen.jsx'
 import JogoDodger from './components/JogoDodger.jsx'
-import TelaFinal from './components/TelaFinal.jsx'
+import TelaRecompensa from './components/TelaRecompensa.jsx'
 import { chuvaDeCoracoes } from './chuvaDeCoracoes.js'
 
 export default function App() {
-  // 'intro' | 'reveal' | 'jogo' | 'final'
+  // 'intro' | 'reveal' | 'jogo' | 'recompensa'
   const [tela, setTela] = useState('intro')
 
   const handleReveal = useCallback(() => {
@@ -37,9 +37,9 @@ export default function App() {
         )}
         {tela === 'reveal' && <RevealScreen key="reveal" />}
         {tela === 'jogo' && (
-          <JogoDodger key="jogo" onInicio={irParaIntro} onVencer={() => setTela('final')} />
+          <JogoDodger key="jogo" onInicio={irParaIntro} onVencer={() => setTela('recompensa')} />
         )}
-        {tela === 'final' && <TelaFinal key="final" onInicio={irParaIntro} />}
+        {tela === 'recompensa' && <TelaRecompensa key="recompensa" onInicio={irParaIntro} />}
       </AnimatePresence>
     </main>
   )

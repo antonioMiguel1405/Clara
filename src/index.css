@@ -32,3 +32,23 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Colunas do mosaico de fotos da recompensa: sobem em loop infinito
+   (a lista é duplicada, então -50% emenda sem salto) */
+@keyframes mosaico-subir {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+.mosaico-coluna {
+  animation: mosaico-subir 70s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mosaico-coluna {
+    animation: none;
+  }
+}

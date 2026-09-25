@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Heart, Home, Play, RotateCcw } from 'lucide-react'
+import { Gift, Heart, Home, Play, RotateCcw } from 'lucide-react'
 import { botaoClaro, botaoForte } from './botoes.js'
 import { jogo } from '../data/content.js'
 import { Game } from '../jogo/Game.js'
@@ -8,8 +8,6 @@ import { ALTURA, ESTUDOS, LARGURA, META_MIMOS, MIMOS, VIDAS } from '../jogo/cons
 import { DESENHAR_ESTUDO, DESENHAR_MIMO } from '../jogo/desenhos.js'
 import { formatarTempo, lerRecorde, salvarRecorde } from '../jogo/recorde.js'
 import { chuvaDeCoracoes } from '../chuvaDeCoracoes.js'
-
-const ESPERA_VITORIA = 1500 // ms entre pegar o 36º mimo e abrir a tela final
 
 const botaoPequeno =
   'pointer-events-auto flex items-center gap-1.5 rounded-full bg-white/85 px-3 py-1.5 font-hand text-lg text-rosa-deep shadow-md shadow-rosa-mid/20 ring-1 ring-rosa-soft backdrop-blur transition hover:bg-white focus:outline-none focus-visible:ring-4 focus-visible:ring-rosa-mid/40'
@@ -42,20 +40,21 @@ function MiniDesenho({ tipo, mimo = false, tamanho = 40 }) {
   return <canvas ref={ref} style={{ width: tamanho, height: tamanho }} aria-hidden="true" />
 }
 
-function Painel({ children }) {
+// `atraso` (s) deixa a cena aparecer antes do painel (ex.: na vitória)
+function Painel({ children, atraso = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, delay: atraso }}
       className="absolute inset-0 z-10 flex items-center justify-center overflow-y-auto bg-rosa-bg/60 px-4 pb-4 pt-16 backdrop-blur-[2px]"
     >
       <motion.div
         initial={{ opacity: 0, y: 16, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut', delay: atraso }}
         className="flex w-full max-w-[330px] flex-col items-center gap-3 rounded-3xl bg-white/90 px-5 py-6 text-center shadow-xl shadow-rosa-mid/25 ring-1 ring-rosa-soft"
       >
         {children}
@@ -69,9 +68,6 @@ export default function JogoDodger({ onInicio, onVencer }) {
   const canvasRef = useRef(null)
   const gameRef = useRef(null)
   const tamanhoRef = useRef(null)
-  const esperaRef = useRef(null)
-  const onVencerRef = useRef(onVencer)
-  onVencerRef.current = onVencer
 
   // 'inicio' | 'jogando' | 'pausado' | 'fim' | 'vitoria'
   const [fase, setFase] = useState('inicio')
@@ -115,7 +111,6 @@ export default function JogoDodger({ onInicio, onVencer }) {
         })
         setFase('vitoria')
         chuvaDeCoracoes()
-        esperaRef.current = setTimeout(() => onVencerRef.current(), ESPERA_VITORIA)
       },
     }
     const game = new Game(canvasRef.current, callbacks, textosCanvas)
@@ -126,7 +121,6 @@ export default function JogoDodger({ onInicio, onVencer }) {
     }
 
     return () => {
-      clearTimeout(esperaRef.current)
       game.destruir()
       gameRef.current = null
     }
@@ -339,14 +333,15 @@ export default function JogoDodger({ onInicio, onVencer }) {
             )}
 
             {fase === 'vitoria' && (
-              <motion.div
-                key="vitoria"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-4"
-              >
-                <p className="text-gradient text-center font-serif text-4xl font-black drop-shadow-sm">{jogo.vitoria}</p>
-              </motion.div>
+              <Painel key="vitoria" atraso={1.2}>
+                <MiniDesenho tipo="coracao" mimo tamanho={56} />
+                <h2 className="text-gradient font-serif text-3xl font-black leading-tight">{jogo.vitoria}</h2>
+                <p className="font-hand text-2xl leading-snug text-rosa-deep/90">{jogo.vitoriaTexto}</p>
+                <button onClick={onVencer} className={`${botaoForte} mt-1 animate-glow`}>
+                  <Gift size={18} />
+                  {jogo.colherRecompensa}
+                </button>
+              </Painel>
             )}
           </AnimatePresence>
         </div>

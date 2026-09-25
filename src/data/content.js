@@ -135,7 +135,7 @@ export const playlist = [
 ]
 
 // --- Minijogo "Uma mensagem surpresa" -----------------------
-//  Mimos = coletáveis (pegar 36 vence) · Estudos = obstáculos.
+//  Mimos = coletáveis (pegar 22 vence) · Estudos = obstáculos.
 //  Ajustes de dificuldade ficam em src/jogo/constantes.js.
 export const jogo = {
   botaoIntro: 'Uma mensagem surpresa',
@@ -143,7 +143,7 @@ export const jogo = {
   frase: 'pegue os mimos para ganhar, evite os estudos!',
   mimos: 'Mimos',
   estudos: 'Estudos',
-  meta: 'Pegue 36 mimos',
+  meta: 'Pegue 22 mimos',
   vidasInfo: 'Você tem 3 vidas',
   vidas: 'vidas',
   perdeuVida: '-1 vida',
@@ -161,12 +161,30 @@ export const jogo = {
   vocePegouDepois: 'mimos',
   novoRecorde: 'Novo recorde! ❤️',
   jogarDeNovo: 'Jogar de novo',
+  // Menu que aparece ao pegar todos os mimos
   vitoria: 'Você conseguiu! ❤️',
+  vitoriaTexto: 'Pegou todos os mimos… agora tem uma coisinha te esperando',
+  colherRecompensa: 'Colher recompensa',
+}
 
-  // Tela que abre ao pegar os 36 mimos
-  final: {
-    titulo: '[mensagem final a definir]',
-    texto: '[texto da mensagem final a definir]',
-    voltar: 'Início',
-  },
+// --- Recompensa (página que abre depois de vencer o jogo) ---
+//  O fundo sai da pasta src/fotos-recompensa/ — é só colocar ou tirar
+//  arquivos .jpg/.jpeg/.png/.webp de lá, sem mexer em código nenhum.
+export const fotosRecompensa = Object.values(
+  import.meta.glob('../fotos-recompensa/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  }),
+)
+
+export const recompensa = {
+  titulo: 'Sua recompensa ❤️',
+  //  Vídeo em /public/  ->  referência como '/nome.mp4'. Vazio = aviso "em breve".
+  video: '/recompensa/video.mp4',
+  capa: '/recompensa/capa.jpg', // imagem mostrada antes de dar play
+  videoEmBreve: 'O vídeo vai aparecer aqui 🎬',
+  mensagem:
+    'Clara, feliz aniversário, estou gravando esse vídeo só para tentar falar o quanto eu tenho orgulho de você.  Eu sei que não consigo em palavras, então decidir tentar em libras. Desde o nosso primeiro date eu sou apaixonado por você, você é a razão do meu acordar e o meu pensamento antes do dormir. Quero que esse seja o primeiro de infinitos aniversários juntos.  Eu te amo',
+  voltar: 'Início',
 }
